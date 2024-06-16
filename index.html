@@ -44,7 +44,7 @@
       const formattedDay = today.getDate().toString().padStart(2, '0');
       const formattedDate = `${today.getFullYear()}${formattedMonth}${formattedDay}`;
 
-      const apiUrl = `${neisApiUrl}?KEY=${apiKey}&Type=json&pIndex=1&pSize=1&ATPT_OFCDC_SC_CODE=${officeCode}&SD_SCHUL_CODE=${schoolCode}&MLSV_YMD=20240617`;
+      const apiUrl = `${neisApiUrl}?KEY=${apiKey}&Type=json&pIndex=1&pSize=1&ATPT_OFCDC_SC_CODE=${officeCode}&SD_SCHUL_CODE=${schoolCode}&MLSV_YMD=${formattedDate}`;
 
       fetch(apiUrl)
         .then(response => {
