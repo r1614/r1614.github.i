@@ -39,10 +39,7 @@
       const apiKey = "c3bfcbc6be3548ea975dde21061bee96";
       const schoolCode = "9022116";
       const officeCode = "S10";
-      const today = new Date();
-      const formattedMonth = (today.getMonth() + 1).toString().padStart(2, '0');
-      const formattedDay = today.getDate().toString().padStart(2, '0');
-      const formattedDate = `${today.getFullYear()}${formattedMonth}${formattedDay}`;
+      const formattedDate = "20240614"; // Fixed date for testing
 
       const apiUrl = `${neisApiUrl}?KEY=${apiKey}&Type=json&pIndex=1&pSize=1&ATPT_OFCDC_SC_CODE=${officeCode}&SD_SCHUL_CODE=${schoolCode}&MLSV_YMD=${formattedDate}`;
 
