@@ -43,6 +43,8 @@
 
       const apiUrl = `${neisApiUrl}?KEY=${apiKey}&Type=json&pIndex=1&pSize=1&ATPT_OFCDC_SC_CODE=${officeCode}&SD_SCHUL_CODE=${schoolCode}&MLSV_YMD=${formattedDate}`;
 
+      console.log("Fetching meal data from API:", apiUrl); // Log API URL for debugging
+
       fetch(apiUrl)
         .then(response => {
           if (!response.ok) {
@@ -51,6 +53,7 @@
           return response.json();
         })
         .then(data => {
+          console.log("API response data:", data); // Log response data for debugging
           const mealInfo = data?.mealServiceDietInfo?.[1]?.row?.[0]?.DDISH_NM;
           if (mealInfo) {
             const cleanedMealInfo = mealInfo.replace(/<br\/>/g, "\n").replace(/(<([^>]+)>)/gi, "");
